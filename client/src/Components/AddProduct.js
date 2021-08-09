@@ -119,7 +119,7 @@ function AddProduct() {
     <Container>
       <Row className="justify-content-center text-center">
         <h1> IRVIN'S PRODUCT ADD LIST</h1>
-        <Col md={6}> 
+        <Col md={8}> 
         <Form onSubmit={postProduct} ref={submit}>
         
           <div className="form-floating mb-3">
@@ -196,34 +196,32 @@ function AddProduct() {
             </form>
           </Row>
 
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              name="tags"
-              value={input}
-              placeholder="Enter a tag"
-              onKeyDown={onKeyDown}
-              onKeyUp={onKeyUp}
-              onChange={onChange}
-              className="form-control"
-              id="floatingInput"
-              placeholder="salted egg yolk"
-            />
-            {/* {tags.length > 0 ? 
-             <span>press "," to add new tags, <br/> click "x" to delete tags </span>
-            : ""} */}
-            <div className="tag-container my-3">
-              {tags.map((tag, index) => (
-                <div className="tag ">
-                  {tag}
-                  <button onClick={() => deleteTag(index)}>x</button>
+          <div className="tag-container my-3">
+                  {tags.map((tag, index) => (
+                    <div className="tag ">
+                      {tag}
+                      <button onClick={() => deleteTag(index)}>x</button>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <label className="text-muted pt-2" for="floatingInput">
-              Tags
-            </label>
-          </div>
+                <div className="form-floating mb-3">
+                <input
+                  type="text"
+                  name="tags"
+                  value={input}
+                  placeholder="Enter a tag"
+                  onKeyDown={onKeyDown}
+                  onKeyUp={onKeyUp}
+                  onChange={onChange}
+                  className="form-control"
+                  id="floatingInput"
+                />
+
+               
+                <label className="text-muted pt-2" for="floatingInput">
+                  Add Tags
+                </label>
+              </div>
 
           <Row className="justify-content-center mt-3">
           

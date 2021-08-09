@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require('dotenv').config()
 
-mongoose.connect("mongodb+srv://kimmyphua:acess123@cluster0.te8qa.mongodb.net/irvins?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DB, {
     useFindAndModify: false,
     useCreateIndex: true,
     useUnifiedTopology: true,
