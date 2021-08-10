@@ -54,15 +54,6 @@ router.put("/products/:id", async(req,res)=>{
         res.status(400).json({"message":"fail to edit item"})
     }
 })
-//
-// router.put("/editcomment/:id", async(req,res)=>{
-//     try{
-//         console.log(req.body)
-//         await pitchModel.findByIdAndUpdate(req.params.id, {$push:  {comments: req.body }})
-//         res.status(200).json({"message":"updated pitch"})
-//     }catch (e) {
-//         res.status(400).json({"message":"fail to edit pitch"})
-//     }
-// })
+
 
 module.exports = router

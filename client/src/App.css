@@ -1,5 +1,8 @@
-.App {
+.app {
   text-align: center;
+  background-color: #ffc107;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .App-logo {
@@ -80,8 +83,51 @@
   cursor: pointer;
   color: white;
 }
+.sort-button {
+  display:inline-block;
+  padding: 0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:2em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family: 'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#000203;
+  text-align:center;
+  transition: all 0.2s;
+}
 
-table-hover :hover {
-  background-color: coral;
+.sort-button:hover {
+background-color:#4095c6;
+}
+
+.table-hover :hover {
+  /* background-color: coral; */
   cursor: pointer;
+}
+
+.table-styles {
+  
+  max-width: auto;
+  
+  overflow: scroll;
+ 
+}
+
+
+html {
+  font: 1em sans-serif;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 0.6rem;
+  }
+
+}
+@media screen and (max-width: 459px) {
+  html {
+    font-size: 0.4rem;
+  }
+
 }

@@ -3,16 +3,18 @@ import {Navbar, Nav, Container} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 function Navigation() {
     return (
-        <Navbar bg="light" variant="light">
-    <Container>
-    <Navbar.Brand href="#">Irvin's</Navbar.Brand>
-    <Nav className="text-dark">
-      <NavLink to="/" className="mx-2">Home</NavLink>
-      <NavLink to="/products" className="mx-2">Add</NavLink>
-      <NavLink to="/" className="mx-2" >Pricing</NavLink>
+        
+   
+      <Navbar bg="dark" text="light">
+    <Navbar.Brand className="text-warning mx-3" href="#">Irvin's</Navbar.Brand>
+    <Nav>
+      <NavLink to="/" className="text-warning mx-2 nav-link">Home</NavLink>
+      <NavLink to="/products" className="text-warning mx-2 nav-link">Add</NavLink>
+      <NavLink to="/info" className="text-warning mx-2 nav-link" >Info</NavLink>
     </Nav>
-    </Container>
-  </Navbar>
+    </Navbar>
+   
+  
     )
 }
 

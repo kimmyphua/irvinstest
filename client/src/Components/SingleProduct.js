@@ -17,12 +17,11 @@ function SingleProduct({ item, i, setProductList }) {
   const form = useRef(null);
   const submit = useRef(null);
   const tableStyle = ({ hover }) => ({
-    // borderRadius: '6px',
-    // border: '1px solid',
     backgroundColor: hover ? "#f7e8b7" : "#ffffff",
-    // padding: '8px 16px',
     cursor: "pointer",
   });
+
+
 
   const [hover, setHover] = useState(false);
 
@@ -138,14 +137,10 @@ function SingleProduct({ item, i, setProductList }) {
     }
   };
 
-//   async function deleteProduct() {
-//     await axios.delete(`api/delete/${item._id}`);
-//     getProducts();
-//     setShow(false);
-//   }
 
   return (
     <>
+    
       <tbody>
         <tr
           style={tableStyle({ hover })}
@@ -153,22 +148,31 @@ function SingleProduct({ item, i, setProductList }) {
           onPointerOut={() => setHover(false)}
           onClick={handleShow}
           key={i}
+  
         >
           <td>{i + 1}</td>
           <td> {item.name}</td>
           <td>${item.price}</td>
-          <td style={{ width: "3em" }}>{item.tags.join(", ")}</td>
-          <td>{item.description}</td>
+          <td >
+              {item.tags.map((tag,i)=>(
+                  <span className="tag">
+                  {tag}
+                  </span>
+              ))}
+              
+              
+              </td>
+          <td > <span style={{textOverflow: 'scroll', overflow: 'scroll', display: "-webkit-box",  webkitboxOrient:"vertical", maxHeight: "12em"}}>{item.description}</span></td>
           <td>
             <img style={{ width: "5em" }} src={item.image} />
           </td>
           <td>
-            {new Date(parseInt(item.createdAt, 10)).toLocaleDateString()},{" "}
-            {new Date(parseInt(item.createdAt, 10)).toLocaleTimeString()}{" "}
+            {new Date(parseInt(item.createdAt, 10)).toLocaleDateString()},
+            {new Date(parseInt(item.createdAt, 10)).toLocaleTimeString()}
           </td>
           <td>
-            {new Date(parseInt(item.updatedAt, 10)).toLocaleDateString()},{" "}
-            {new Date(parseInt(item.updatedAt, 10)).toLocaleTimeString()}{" "}
+            {new Date(parseInt(item.updatedAt, 10)).toLocaleDateString()},
+            {new Date(parseInt(item.updatedAt, 10)).toLocaleTimeString()}
           </td>
         </tr>
       </tbody>
@@ -199,7 +203,7 @@ function SingleProduct({ item, i, setProductList }) {
                   disabled={true}
                   className="form-control"
                   id="floatingInput"
-                  defaultValue={item.createdAt}
+                  defaultValue={new Date(parseInt(item.createdAt, 10)).toLocaleDateString()}
                 />
                 <label className="text-muted pt-2" for="floatingInput">
                   Created At
@@ -213,7 +217,7 @@ function SingleProduct({ item, i, setProductList }) {
                   disabled={true}
                   className="form-control"
                   id="floatingInput"
-                  defaultValue={item.updatedAt}
+                  defaultValue={new Date(parseInt(item.updatedAt, 10)).toLocaleDateString()}
                 />
                 <label className="text-muted pt-2" for="floatingInput">
                   Updated At
@@ -242,6 +246,7 @@ function SingleProduct({ item, i, setProductList }) {
                   name="price"
                   required={true}
                   min={1}
+                  step={0.01}
                   onChange={settingProduct}
                   defaultValue={item.price}
                   className="form-control"
