@@ -4,6 +4,7 @@ import { Container, Row, Col, Button, Table } from "react-bootstrap";
 import axios from "axios";
 import { Image } from "cloudinary-react";
 import DeleteProduct from "./DeleteProduct";
+import DeleteTag from "./DeleteTag";
 
 function SingleProduct({ item, i, setProductList }) {
   const [input, setInput] = useState("");
@@ -12,7 +13,7 @@ function SingleProduct({ item, i, setProductList }) {
     updatedAt: Date.now(),
   });
   const [isKeyReleased, setIsKeyReleased] = useState(false);
-  const [img, setImg] = useState(item.image);
+  const [img, setImg] = useState("");
   const [show, setShow] = useState(false);
   const form = useRef(null);
   const submit = useRef(null);
@@ -27,6 +28,7 @@ function SingleProduct({ item, i, setProductList }) {
 
   function handleShow() {
     setShow(true);
+    setTags(item.tags)
   }
 
   const onChange = (e) => {
@@ -196,6 +198,12 @@ function SingleProduct({ item, i, setProductList }) {
         <Modal.Body>
           <Col md={12}>
             <Form onSubmit={updateProduct} ref={submit}>
+                
+            <Row className="justify-content-center mb-3">
+                <Button type="submit" className="w-25 bg-light text-dark">
+                  Update
+                </Button>
+              </Row>
               <div className="form-floating mb-3">
                 <input
                   type="text"
@@ -285,20 +293,33 @@ function SingleProduct({ item, i, setProductList }) {
                       uploadImg(e.target.files);
                     }}
                   />
+                    <Row className="justify-content-center py-1">
+                  Current Image: 
                   <Image
+                    style={{ maxWidth: "8em" }}
+                    cloudName="kimmyp"
+                    publicId={item.image}
+                  /> 
+                  New image: 
+                   <Image
                     style={{ maxWidth: "8em" }}
                     cloudName="kimmyp"
                     publicId={img}
                   />
+                  </Row>
                 </form>
               </Row>
-
+              </Form>
               
               <div className="tag-container my-3">
                   {tags.map((tag, index) => (
                     <div className="tag ">
-                      {tag}
-                      <button onClick={() => deleteTag(index)}>x</button>
+                      
+                      <DeleteTag
+                      index={index}
+                      setTags={setTags}
+                      tag={tag}/>
+                      
                     </div>
                   ))}
                 </div>
@@ -321,12 +342,12 @@ function SingleProduct({ item, i, setProductList }) {
                 </label>
               </div>
 
-              <Row className="justify-content-center mt-3">
+              {/* <Row className="justify-content-center mt-3">
                 <Button type="submit" className="w-25 bg-light text-dark">
                   Update
                 </Button>
-              </Row>
-            </Form>
+              </Row> */}
+           
           </Col>
         </Modal.Body>
       </Modal>

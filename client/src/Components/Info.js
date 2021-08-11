@@ -28,7 +28,7 @@ function Info() {
             Fields left unchanged will remain unchanged. <br/>
             Page will update automatically.
             </h4>
-            <img style={{width: "40em"}} src="https://i.imgur.com/htwLfL9.gif"/>
+            <img style={{width: "40em"}} src="https://i.imgur.com/aQElC15.gif"/>
             
 
 
