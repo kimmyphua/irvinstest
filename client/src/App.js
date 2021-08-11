@@ -5,9 +5,11 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import ViewProducts from "./Components/ViewProducts";
 import Navigation from "./Components/Navigation";
 import Info from "./Components/Info";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
+    <>
     <div class="app">
       <BrowserRouter>
         <Navigation />
@@ -23,7 +25,10 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
+      </div>
+      <Footer/>
+    
+    </>
   );
 }
 
