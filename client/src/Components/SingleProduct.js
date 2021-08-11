@@ -155,7 +155,7 @@ function SingleProduct({ item, i, setProductList }) {
           <td>{i + 1}</td>
           <td> {item.name}</td>
           <td>${item.price}</td>
-          <td >
+          <td style={{maxWidth: "10em"}}>
               {item.tags.map((tag,i)=>(
                   <span className="tag">
                   {tag}
@@ -169,11 +169,11 @@ function SingleProduct({ item, i, setProductList }) {
             <img style={{ width: "5em" }} src={item.image} />
           </td>
           <td>
-            {new Date(parseInt(item.createdAt, 10)).toLocaleDateString()},
+            {new Date(parseInt(item.createdAt, 10)).toLocaleDateString()},<br/>
             {new Date(parseInt(item.createdAt, 10)).toLocaleTimeString()}
           </td>
           <td>
-            {new Date(parseInt(item.updatedAt, 10)).toLocaleDateString()},
+            {new Date(parseInt(item.updatedAt, 10)).toLocaleDateString()},<br/>
             {new Date(parseInt(item.updatedAt, 10)).toLocaleTimeString()}
           </td>
         </tr>

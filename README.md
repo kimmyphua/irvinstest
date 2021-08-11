@@ -18,26 +18,25 @@ This is a simple full-stack web application that allows users to add products to
 <h3>1. Search </h3>
 <h4> Use the search bar to filter the products. <br/>
     Keywords will match items' name, tags and description.</h4>
-<img width="50%" height="50%" src="https://i.imgur.com/eidMmjR.gif"/>
+<img width="50%" height="50%" src="https://i.imgur.com/9QaJwR3.png"/>
+<img width="50%" height="50%" src="https://i.imgur.com/hI0o0wb.png"/>
 
-
-<h3>2. Add </h3>
+<h3>2. Add</h3>
 <h4>Click the "Add" tab to go to the add product page. <br/>
     Enter the product details. <br/>
     Required fields include name and price.<br/>
     New tags will be added after clicking the "Enter"/"Return" key. <br/>
     Supported image files include "png", "jpg", "gif" and "jpeg".<br/>
 </h4>
-<img width="50%" height="50%" src="https://i.imgur.com/IHGs592.gif"/>
-
+<img width="50%" height="50%" src="https://i.imgur.com/jWt3AnR.png"/>
+ 
 <h3>3. Update </h3>
 <h4> Click on the product in the main page and key in the fields that requires updating. <br/>
 Fields left unchanged will remain unchanged. <br/>
 Page will update automatically.
 </h4>
-<img width="50%" height="50%" src="https://i.imgur.com/aQElC15.gif"/>
-
+<img width="50%" height="50%" src="https://i.imgur.com/ENIqR5v.png"/>
 
 <h3>4. Delete </h3>
 <h4>To delete, click on the delete button and click "confirm".</h4>
-<img width="50%" height="50%" src="https://i.imgur.com/MH4Eauy.gif"/>
+<img width="50%" height="50%" src="https://i.imgur.com/6g4A5aT.png"/>
